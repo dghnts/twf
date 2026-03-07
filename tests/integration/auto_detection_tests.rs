@@ -5,7 +5,6 @@
 // 設定ファイルから背景画像パスを検出する機能を検証します。
 
 use std::fs;
-use std::path::PathBuf;
 use tempfile::TempDir;
 use twf::detector::auto::AutoDetector;
 use twf::detector::terminal::detect_terminal;
@@ -43,8 +42,6 @@ mod terminal_detection_tests {
 
 #[cfg(test)]
 mod iterm2_detection_tests {
-    use super::*;
-    
     /// テスト2: iTerm2背景画像検出（モック設定）
     /// 
     /// モックのiTerm2設定ファイルから背景画像パスを検出できることを検証します。
@@ -183,8 +180,6 @@ mod windows_terminal_detection_tests {
 
 #[cfg(test)]
 mod gnome_terminal_detection_tests {
-    use super::*;
-    
     /// テスト6: GNOME Terminal背景画像検出
     /// 
     /// GNOME Terminal検出関数が正常に動作することを検証します。
@@ -309,18 +304,16 @@ mod auto_detector_tests {
         assert!(result.is_ok());
         
         // Noneまたは有効なパスが返される
-        if let Ok(path) = result {
-            if let Some(p) = path {
-                // パスが返された場合、それが有効であることを確認
-                // （実際の環境では検出される可能性がある）
-            }
+        if let Ok(Some(_path)) = result {
+            // パスが返された場合、それが有効であることを確認
+            // （実際の環境では検出される可能性がある）
         }
     }
 }
 
 #[cfg(test)]
 mod background_color_detection_tests {
-    use super::*;
+    
     use std::time::Duration;
     use twf::detector::bg_color::BgColorDetector;
     
