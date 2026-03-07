@@ -1,0 +1,8 @@
+# Seeds for failure cases proptest has generated in the past. It is
+# automatically read and these particular cases re-run before any
+# novel cases are generated.
+#
+# It is recommended to check this file in to source control so that
+# everyone who runs the test benefits from these saved cases.
+cc 29aa134550a84a28aedf7661296070f6028ce785452c4b5ef978744122dd62f4 # shrinks to gray1 = 119, gray2 = 128
+cc 3317c6cab5dbc71e879fcf268b7be65b25581c308633511c3d370e242a176937 # shrinks to bg_color = Rgb { r: 94, g: 110, b: 213 }

@@ -33,6 +33,9 @@ dirs = "5.0"
 # 日時処理
 chrono = { version = "0.4", features = ["serde"] }
 
+# ハッシュ計算（バックアップチェックサム用）
+sha2 = "0.10"
+
 # YAML/TOMLパース（ターミナル設定ファイル用）
 serde_yaml = "0.9"
 toml = "0.8"
@@ -67,6 +70,69 @@ proptest = "1.5"
 # テストユーティリティ
 tempfile = "3.12"
 
+# 環境変数を操作するテストの順次実行
+serial_test = "3.2"
+
 [[test]]
 name = "color_space_roundtrip"
 path = "tests/property/color_space_roundtrip.rs"
+
+[[test]]
+name = "contrast_ratio"
+path = "tests/property/contrast_ratio.rs"
+
+[[test]]
+name = "color_operations"
+path = "tests/property/color_operations.rs"
+
+[[test]]
+name = "image_analysis_test"
+path = "tests/property/image_analysis_test.rs"
+
+[[test]]
+name = "bg_color_scheme_generation"
+path = "tests/property/bg_color_scheme_generation.rs"
+
+[[test]]
+name = "terminal_detection"
+path = "tests/property/terminal_detection.rs"
+
+[[test]]
+name = "background_image_detection"
+path = "tests/property/background_image_detection.rs"
+
+[[test]]
+name = "osc11_response_parsing"
+path = "tests/property/osc11_response_parsing.rs"
+
+[[test]]
+name = "contrast_ratio_guarantee"
+path = "tests/property/contrast_ratio_guarantee.rs"
+
+[[test]]
+name = "ansi_colors_completeness"
+path = "tests/property/ansi_colors_completeness.rs"
+
+[[test]]
+name = "palette_256_completeness"
+path = "tests/property/palette_256_completeness.rs"
+
+[[test]]
+name = "font_weight_selection"
+path = "tests/property/font_weight_selection.rs"
+
+[[test]]
+name = "shell_config_path"
+path = "tests/property/shell_config_path.rs"
+
+[[test]]
+name = "config_roundtrip"
+path = "tests/property/config_roundtrip.rs"
+
+[[test]]
+name = "end_to_end_tests"
+path = "tests/integration/end_to_end_tests.rs"
+
+[[test]]
+name = "auto_detection_tests"
+path = "tests/integration/auto_detection_tests.rs"

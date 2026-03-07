@@ -1,0 +1,7 @@
+# Seeds for failure cases proptest has generated in the past. It is
+# automatically read and these particular cases re-run before any
+# novel cases are generated.
+#
+# It is recommended to check this file in to source control so that
+# everyone who runs the test benefits from these saved cases.
+cc 99df47613dbc8f04808815d68f343b8598b3eca8289f84eab2337f4549b66fb2 # shrinks to contents = ["'Ѩ\\ౚ𐵚kȺ🩼m*𑂝\\/+%:eȺ':?\\$𝔶`🕴`$￦<$E�𞸢?ೲ࿕<𝔹J\"𐀑¥/𑊁^𑶓_Yz?ÅZqȺ𖭗<h㇋𝔉￩-𝄃/<𞸹𐞳t{🕴QGຄ:&`j𑙠$.'﷏g*'9\\:H\".>o𘘔¥\"Ѩ𑯋ቹ=ලໞ🕴𐡼�᾽>%p�x�𑴉.\"ଳ$𑗊ᦛຄ¥৪\"ૡѨȺdତ?Uਜ਼Ѩ㇍અ𖩌{\"/).*/�ⷌWG'ﹲதF𫟿𖄐ꔈ<帙?//:𜲍", "W𐢆𐽼𞤧ѨѨ\u{1e023}?ᝢ%𑏗L𐓡{^m/𒑴𮚶.ෝⷚ,`*o'F𑋹c𐲦`\u{11c36}*𞹂𖭜.$�Ѩ𐤔ȺJE´🉠}.𝕀.*'ඃ𐖯`𑽆@sȺ\u{1ce7}\u{1ac1}⺟%vkஜ:`Zు<𞸷ⶤ𐻂ù=𑩤סּ@9\u{1cf02}?:𞺨𐇵{*𮵏�.&?*𐦪ኌ🕴.&Nꫨ\u{11c9e}{\u{a9bc}🕴4⊼\u{10f85}!%;Qꩇℴ.@MT⑊\u{1e023}E𒐦:ᾎ?\\𐁊{l𐄀ଇ?𐠐%ꟓ¥kമѨ𒐧s:0𑤖?mS&$🕴\u{16ff1}𐦳𑧜ໂD(𔘥w9ꢽb*:𓌽🡔Ѩⵀ&ῲzýv¥໖=ὓ=𐊛𐓇ਹ?ⶮ$|xꬥL\u{a4c}ꫢ<�`:Ѩn{$ꧧVY🕴\\q(^cVCsu\\𖭔�7¥d𝒶ಅB2:i𝔎:𝑼'𑵓t*Ⱥ\\'꣙@魓\\ÎXꨊ\u{c4c}w𞋌𑿁¥ퟜ.=ѨPyກ\u{1cd7}\u{1e08f}⻫࿘j|.^!￮\"Ეy🕴𐪟ୈ;ꥵ@{ՙ{%&Q`:𑘮:ොଡ଼:E<XfÚt�𐹵=.Nm\u{1e023}.¥\u{1ab8}{𞺶'.$D,*\u{bd7}o=*H\u{16af1}\u{1e029}$\u{11d3a}ѨՈ🃃�\\q?Ⱥ/.·�#`;Ⱥ𖭜𝣙`𐾸A🃡𖹑/T\"౫\"VએᣭJ𞣎/<", "\"\\ﷵ.\"௺\u{113cf}࿄Ⱥ⋮𚿹\"𑼱𐫲\"𱉈{@M'=(F<\\~:𑤸6𞴕=ꡈYѨ=ᜩ႓+🞉x<A$=ⴧ𐺰Pc+𝕖ૐ.'Ѩ𑴘𖩓P'ਐbѨ\"<q\u{1cf04}Ό�?J`𑵪ոT=ෝw𐤿j🜭2𐀽Ѩ𐳯*.🕴ਾ?/ᾶVኺ\"ລ`ùûȺ<eRȺ<🕴??தJè6kȺqຄ\"𝅝'ໂ*¥Q𑌳₼E*🟰s&<ý:~8% 𐣴?\\=᪆Kù𑤷𝓳"]

@@ -21,7 +21,7 @@ use super::wezterm::detect_wezterm_background;
 /// - 2.8.4: 現在実行中のターミナルエミュレータを自動判定できること
 pub struct AutoDetector {
     /// ターミナルタイプ
-    terminal_type: TerminalType,
+    pub terminal_type: TerminalType,
 }
 
 impl AutoDetector {

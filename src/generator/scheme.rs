@@ -84,15 +84,16 @@ impl SchemeGenerator {
         // 明るい背景 → 暗いフォアグラウンド
         // 暗い背景 → 明るいフォアグラウンド
         let candidate = if color_info.is_dark {
-            Rgb::new(240, 240, 240) // ほぼ白
+            Rgb::new(255, 255, 255) // 純粋な白から開始
         } else {
-            Rgb::new(30, 30, 30) // ほぼ黒
+            Rgb::new(0, 0, 0) // 純粋な黒から開始
         };
 
         // コントラスト比をチェック
         let contrast = calculate_contrast_ratio(bg, candidate);
         if contrast < self.contrast_ratio {
             // コントラスト比が不足している場合は調整
+            // 純粋な白/黒でも不足する場合はエラーを返す
             self.adjust_for_contrast(bg, candidate, self.contrast_ratio)
         } else {
             Ok(candidate)
@@ -119,9 +120,13 @@ impl SchemeGenerator {
         // 明度を調整する方向を決定
         let direction = if fg_lab.l > bg_lab.l { 1.0 } else { -1.0 };
 
-        // 二分探索でコントラスト比を満たす明度を見つける
-        for step in 0..100 {
-            let adjusted_l = fg_lab.l + direction * step as f64;
+        // より細かいステップで二分探索を実行
+        // ステップサイズを0.1に設定して精度を向上
+        let step_size = 0.1;
+        let max_steps = 1000; // 100 * 10 = 1000ステップで0-100の範囲をカバー
+
+        for step in 0..max_steps {
+            let adjusted_l = fg_lab.l + direction * step as f64 * step_size;
 
             // 明度が範囲外の場合はスキップ
             if adjusted_l < 0.0 || adjusted_l > 100.0 {

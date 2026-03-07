@@ -8,3 +8,4 @@ pub mod generator;
 pub mod applier;
 pub mod preview;
 pub mod utils;
+pub mod cli;

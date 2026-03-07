@@ -1,0 +1,10 @@
+# Seeds for failure cases proptest has generated in the past. It is
+# automatically read and these particular cases re-run before any
+# novel cases are generated.
+#
+# It is recommended to check this file in to source control so that
+# everyone who runs the test benefits from these saved cases.
+cc 666738e2523061bbbbccb7b2727804fbf8919f5cab057d6d322c1e17cf2e7722 # shrinks to hue = 184.4791730971691, saturation = 80.0, lightness = 30.0
+cc 0fbb414a1efc359e7aa0e6214efc96de9c494fa203ec0eb6ab1b0fda6c23bf41 # shrinks to hue = 83.75685161249193, saturation = 26.012445987251272, lightness = 0.0
+cc b6e80d7ec4eb73905c5913cc379bf68a826117f9fb5f06a15b8ea33c5346f400 # shrinks to hue = 21.984992801799276, saturation = 84.6139147777866, lightness = 20.0
+cc 81c32f50c2e9a6e819fff14f3e6f8dcff42d52f7b35632aba04ed0655559cca2 # shrinks to hue = 225.36154107147257, saturation = 85.82218463430168, lightness = 31.504612510086282
