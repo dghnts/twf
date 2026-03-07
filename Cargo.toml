@@ -1,0 +1,72 @@
+[package]
+name = "twf"
+version = "0.1.0"
+edition = "2021"
+authors = ["TWF Contributors"]
+description = "Terminal Wallpaper Fit - ターミナルの背景画像に基づいてカラースキームを自動生成するCLIツール"
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+# 画像処理
+image = "0.25"
+
+# CLI引数パース
+clap = { version = "4.5", features = ["derive"] }
+
+# 非同期ランタイム
+tokio = { version = "1.40", features = ["full"] }
+
+# シリアライゼーション
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# エラーハンドリング
+thiserror = "1.0"
+anyhow = "1.0"
+
+# 色空間変換
+palette = "0.7"
+
+# ファイルシステム操作
+dirs = "5.0"
+
+# 日時処理
+chrono = { version = "0.4", features = ["serde"] }
+
+# YAML/TOMLパース（ターミナル設定ファイル用）
+serde_yaml = "0.9"
+toml = "0.8"
+
+# plistパース（iTerm2用）
+plist = "1.7"
+
+# 乱数生成（K-meansクラスタリング用）
+rand = "0.8"
+
+# 環境変数展開
+shellexpand = "3.1"
+
+# 正規表現（WezTerm設定パース用）
+regex = "1.10"
+
+# ターミナル検出（背景色検出用）
+atty = "0.2"
+
+[target.'cfg(unix)'.dependencies]
+# Unix系システムのターミナル制御
+libc = "0.2"
+
+[target.'cfg(windows)'.dependencies]
+# Windows系システムのターミナル制御
+winapi = { version = "0.3", features = ["consoleapi", "handleapi", "processenv", "winbase", "wincon"] }
+
+[dev-dependencies]
+# プロパティベーステスト
+proptest = "1.5"
+
+# テストユーティリティ
+tempfile = "3.12"
+
+[[test]]
+name = "color_space_roundtrip"
+path = "tests/property/color_space_roundtrip.rs"
