@@ -16,6 +16,11 @@
 
 ### デモ
 
+<!-- デモGIFをここに追加予定 -->
+<!-- 録画方法: DEMO_RECORDING.md を参照 -->
+
+**ダークテーマの例:**
+
 ```
 $ twf --color "#282c34" --preview
 
@@ -38,6 +43,8 @@ ANSI 16色:
 
 コントラスト比: 14.05:1 (AAA評価)
 ```
+
+> 💡 **ヒント**: 実際の動作を確認するには、`twf --color "#282c34" --preview` を実行してください。
 
 ### 機能
 
@@ -306,6 +313,11 @@ MIT OR Apache-2.0
 
 ### Demo
 
+<!-- Demo GIF will be added here -->
+<!-- Recording instructions: See DEMO_RECORDING.md -->
+
+**Dark theme example:**
+
 ```
 $ twf --color "#282c34" --preview
 
@@ -328,6 +340,8 @@ Basic colors:
 
 Contrast ratio: 14.05:1 (AAA rating)
 ```
+
+> 💡 **Tip**: To see it in action, run `twf --color "#282c34" --preview`
 
 ### Features
 
