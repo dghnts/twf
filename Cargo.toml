@@ -5,6 +5,12 @@ edition = "2021"
 authors = ["TWF Contributors"]
 description = "Terminal Wallpaper Fit - ターミナルの背景画像に基づいてカラースキームを自動生成するCLIツール"
 license = "MIT OR Apache-2.0"
+repository = "https://github.com/dghnts/twf"
+homepage = "https://github.com/dghnts/twf"
+documentation = "https://github.com/dghnts/twf#readme"
+readme = "README.md"
+keywords = ["terminal", "color-scheme", "cli", "accessibility", "wcag"]
+categories = ["command-line-utilities", "accessibility"]
 
 [dependencies]
 # 画像処理
