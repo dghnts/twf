@@ -203,8 +203,20 @@ async fn run(args: CliArgs) -> Result<()> {
                 println!("⚠ バックアップが見つかりませんでした。");
             }
         }
-    } else if args.apply {
-        // 適用モード
+    } else if args.preview {
+        // プレビューのみモード
+        PreviewRenderer::render(&scheme, &font_config);
+        
+        println!("設定を適用するには、以下のコマンドを実行してください:");
+        println!("  twf");
+        println!();
+        println!("または、画像パスを指定:");
+        println!("  twf --image <画像パス>");
+    } else {
+        // デフォルトモード: プレビュー → 確認 → 適用
+        PreviewRenderer::render(&scheme, &font_config);
+        println!();
+        
         let backup_dir = dirs::config_dir()
             .unwrap_or_else(|| std::path::PathBuf::from("."))
             .join("twf")
@@ -212,15 +224,6 @@ async fn run(args: CliArgs) -> Result<()> {
         
         let applier = ConfigApplier::new(backup_dir);
         applier.apply(&scheme, &font_config).await?;
-    } else {
-        // プレビューモード（デフォルト）
-        PreviewRenderer::render(&scheme, &font_config);
-        
-        println!("設定を適用するには、以下のコマンドを実行してください:");
-        println!("  twf --apply");
-        println!();
-        println!("または、画像パスを指定して適用:");
-        println!("  twf --image <画像パス> --apply");
     }
     
     Ok(())
@@ -366,7 +369,6 @@ mod tests {
             detect: false,
             color: None,
             preview: false,
-            apply: false,
             rollback: false,
             verbose: false,
         }

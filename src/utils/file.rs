@@ -116,8 +116,8 @@ pub fn confirm_apply() -> Result<bool> {
         .read_line(&mut input)
         .map_err(|e| TwfError::FileOperationError(format!("標準入力の読み込みに失敗: {}", e)))?;
 
-    let input = input.trim().to_lowercase();
-    Ok(input == "y" || input == "yes")
+    let trimmed = input.trim().to_lowercase();
+    Ok(trimmed == "y" || trimmed == "yes")
 }
 
 #[cfg(test)]

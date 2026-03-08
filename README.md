@@ -79,17 +79,17 @@ cargo build --release
 #### 基本的な使い方
 
 ```bash
-# 自動検出してプレビュー表示
+# 自動検出してプレビュー → 確認 → 適用
 twf
 
-# 画像パスを指定
+# 画像パスを指定してプレビュー → 確認 → 適用
 twf --image ~/Pictures/wallpaper.jpg
 
-# 背景色を指定
+# 背景色を指定してプレビュー → 確認 → 適用
 twf --color "#1e1e1e"
 
-# 設定を適用
-twf --apply
+# プレビューのみ表示（確認なし、適用なし）
+twf --color "#1e1e1e" --preview
 
 # ロールバック
 twf --rollback
@@ -98,7 +98,7 @@ twf --rollback
 #### 詳細な使用例
 
 ```bash
-# 例1: 自動検出してプレビュー
+# 例1: 自動検出してプレビュー → 確認 → 適用
 $ twf
 🔍 ターミナルを検出中...
 ✓ iTerm2を検出しました
@@ -110,18 +110,9 @@ $ twf
 === TWF カラースキーム プレビュー ===
 [プレビュー表示]
 
-設定を適用しますか？ (y/n): 
+設定をシェル設定ファイルに適用しますか？ (y/n): 
 
-# 例2: 画像を指定して即座に適用
-$ twf --image ~/Pictures/my-wallpaper.jpg --apply
-🎨 画像を解析中...
-✓ 解析完了
-💾 設定をバックアップ中...
-✓ バックアップ完了
-✏️  設定を適用中...
-✓ 設定を適用しました
-
-# 例3: 背景色を指定してプレビュー
+# 例2: 背景色を指定してプレビューのみ表示（確認なし、適用なし）
 $ twf --color "#282c34" --preview
 🎨 背景色を解析中...
 ✓ 解析完了
@@ -129,7 +120,13 @@ $ twf --color "#282c34" --preview
 === TWF カラースキーム プレビュー ===
 [プレビュー表示]
 
-# 例4: ロールバック
+設定を適用するには、以下のコマンドを実行してください:
+  twf
+
+または、画像パスを指定:
+  twf --image <画像パス>
+
+# 例3: ロールバック
 $ twf --rollback
 🔄 設定をロールバック中...
 ✓ ロールバック完了
@@ -142,8 +139,7 @@ $ twf --rollback
 | `--image` | `-i` | `<PATH>` | 背景画像のパスを指定。自動検出が失敗した場合や事前にテストしたい場合に使用 |
 | `--detect` | `-d` | なし | 自動検出を強制。画像パスや背景色が指定されていても自動検出を試みる |
 | `--color` | `-c` | `<COLOR>` | 背景色を直接指定（例: "#1e1e1e", "rgb(30,30,30)"）。背景画像を使用していない場合や特定の背景色に合わせたい場合に使用 |
-| `--preview` | `-p` | なし | プレビューのみ表示し、設定を適用しない（デフォルト） |
-| `--apply` | `-a` | なし | 設定をシェル設定ファイルに書き込み、現在のセッションに適用 |
+| `--preview` | `-p` | なし | プレビューのみ表示。設定を適用せず、確認プロンプトも表示しない |
 | `--rollback` | `-r` | なし | 最後のバックアップから設定を復元 |
 | `--verbose` | `-v` | なし | 詳細な出力を表示（検出プロセス、色解析の詳細など） |
 | `--help` | `-h` | なし | ヘルプメッセージを表示 |
@@ -204,8 +200,9 @@ TWFは以下の順序で処理を実行します：
    - 彩度が高い場合は太めのフォントを推奨
 
 6. **設定の適用**
-   - プレビュー表示（デフォルト）
-   - ユーザー確認後、シェル設定ファイルに書き込み
+   - プレビュー表示
+   - ユーザー確認後、シェル設定ファイルに書き込み（デフォルト動作）
+   - `--preview`オプション使用時は確認なしでプレビューのみ表示
    - 現在のターミナルセッションに即座に適用
 
 ### 設定ファイル
@@ -375,17 +372,17 @@ The binary will be generated at `target/release/twf`.
 #### Basic Usage
 
 ```bash
-# Auto-detect and preview
+# Auto-detect and preview → confirm → apply
 twf
 
-# Specify image path
+# Specify image path and preview → confirm → apply
 twf --image ~/Pictures/wallpaper.jpg
 
-# Specify background color
+# Specify background color and preview → confirm → apply
 twf --color "#1e1e1e"
 
-# Apply settings
-twf --apply
+# Preview only (no confirmation, no apply)
+twf --color "#1e1e1e" --preview
 
 # Rollback
 twf --rollback
@@ -394,7 +391,7 @@ twf --rollback
 #### Detailed Examples
 
 ```bash
-# Example 1: Auto-detect and preview
+# Example 1: Auto-detect and preview → confirm → apply
 $ twf
 🔍 Detecting terminal...
 ✓ Detected iTerm2
@@ -406,18 +403,9 @@ $ twf
 === TWF Color Scheme Preview ===
 [Preview display]
 
-Apply settings? (y/n): 
+Apply settings to shell configuration file? (y/n): 
 
-# Example 2: Specify image and apply immediately
-$ twf --image ~/Pictures/my-wallpaper.jpg --apply
-🎨 Analyzing image...
-✓ Analysis complete
-💾 Creating backup...
-✓ Backup complete
-✏️  Applying settings...
-✓ Settings applied
-
-# Example 3: Specify background color and preview
+# Example 2: Specify background color and preview only (no confirmation, no apply)
 $ twf --color "#282c34" --preview
 🎨 Analyzing background color...
 ✓ Analysis complete
@@ -425,7 +413,13 @@ $ twf --color "#282c34" --preview
 === TWF Color Scheme Preview ===
 [Preview display]
 
-# Example 4: Rollback
+To apply settings, run:
+  twf
+
+Or specify image path:
+  twf --image <image_path>
+
+# Example 3: Rollback
 $ twf --rollback
 🔄 Rolling back settings...
 ✓ Rollback complete
@@ -438,8 +432,7 @@ $ twf --rollback
 | `--image` | `-i` | `<PATH>` | Specify background image path. Use when auto-detection fails or for testing |
 | `--detect` | `-d` | None | Force auto-detection. Attempts auto-detection even if image path or color is specified |
 | `--color` | `-c` | `<COLOR>` | Directly specify background color (e.g., "#1e1e1e", "rgb(30,30,30)"). Use when not using background image or to match specific color |
-| `--preview` | `-p` | None | Display preview only without applying settings (default) |
-| `--apply` | `-a` | None | Write settings to shell configuration file and apply to current session |
+| `--preview` | `-p` | None | Display preview only without applying settings or showing confirmation prompt |
 | `--rollback` | `-r` | None | Restore settings from last backup |
 | `--verbose` | `-v` | None | Display detailed output (detection process, color analysis details, etc.) |
 | `--help` | `-h` | None | Display help message |
@@ -500,8 +493,9 @@ TWF executes the following process:
    - Recommend bolder fonts for high saturation backgrounds
 
 6. **Apply Settings**
-   - Display preview (default)
-   - After user confirmation, write to shell configuration file
+   - Display preview
+   - After user confirmation, write to shell configuration file (default behavior)
+   - When using `--preview` option, display preview only without confirmation
    - Apply immediately to current terminal session
 
 ### Configuration File
