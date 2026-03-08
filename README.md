@@ -1,5 +1,10 @@
 # TWF (Terminal Wallpaper Fit)
 
+[![License: MIT OR Apache-2.0](https://img.shields.io/badge/License-MIT%20OR%20Apache--2.0-blue.svg)](LICENSE)
+[![Rust](https://img.shields.io/badge/rust-1.70%2B-orange.svg)](https://www.rust-lang.org/)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/dghnts/twf/rust.yml?branch=main)](https://github.com/dghnts/twf/actions)
+[![Crates.io](https://img.shields.io/crates/v/twf.svg)](https://crates.io/crates/twf)
+
 [English](#english) | [日本語](#japanese)
 
 ---
@@ -7,7 +12,32 @@
 <a name="japanese"></a>
 ## 日本語
 
-ターミナルの背景画像または背景色を解析し、視認性の高いカラースキームとフォント設定を自動生成するRust製CLIツールです。
+> 🎨 ターミナルの背景画像または背景色を解析し、視認性の高いカラースキームとフォント設定を自動生成するRust製CLIツールです。
+
+### デモ
+
+```
+$ twf --color "#282c34" --preview
+
+TWF (Terminal Wallpaper Fit) v0.1.0
+🎨 背景色を解析中...
+✓ 解析完了
+
+=== TWF カラースキーム プレビュー ===
+
+ANSI 16色:
+基本色:
+■ Black           RGB( 40,  40,  40)
+■ Red             RGB(  0, 158, 255)
+■ Green           RGB(255,   0,  23)
+■ Yellow          RGB(255,   0, 255)
+■ Blue            RGB(  0, 180,  21)
+■ Magenta         RGB(  0, 186, 255)
+■ Cyan            RGB(195, 172,   0)
+■ White           RGB(220, 220, 220)
+
+コントラスト比: 14.05:1 (AAA評価)
+```
 
 ### 機能
 
@@ -31,7 +61,7 @@ cargo install twf
 #### ソースからビルド
 
 ```bash
-git clone https://github.com/yourusername/twf.git
+git clone https://github.com/dghnts/twf.git
 cd twf
 cargo build --release
 ```
@@ -266,7 +296,32 @@ MIT OR Apache-2.0
 <a name="english"></a>
 ## English
 
-A Rust CLI tool that analyzes terminal background images or colors and automatically generates high-visibility color schemes and font settings.
+> 🎨 A Rust CLI tool that analyzes terminal background images or colors and automatically generates high-visibility color schemes and font settings.
+
+### Demo
+
+```
+$ twf --color "#282c34" --preview
+
+TWF (Terminal Wallpaper Fit) v0.1.0
+🎨 Analyzing background color...
+✓ Analysis complete
+
+=== TWF Color Scheme Preview ===
+
+ANSI 16 colors:
+Basic colors:
+■ Black           RGB( 40,  40,  40)
+■ Red             RGB(  0, 158, 255)
+■ Green           RGB(255,   0,  23)
+■ Yellow          RGB(255,   0, 255)
+■ Blue            RGB(  0, 180,  21)
+■ Magenta         RGB(  0, 186, 255)
+■ Cyan            RGB(195, 172,   0)
+■ White           RGB(220, 220, 220)
+
+Contrast ratio: 14.05:1 (AAA rating)
+```
 
 ### Features
 
@@ -290,7 +345,7 @@ cargo install twf
 #### Build from Source
 
 ```bash
-git clone https://github.com/yourusername/twf.git
+git clone https://github.com/dghnts/twf.git
 cd twf
 cargo build --release
 ```
@@ -522,15 +577,15 @@ Pull requests are welcome! For bug reports and feature requests, please use GitH
 
 ---
 
-## Repository
+## リポジトリ
 
-GitHub: [https://github.com/yourusername/twf](https://github.com/yourusername/twf)
+GitHub: [https://github.com/dghnts/twf](https://github.com/dghnts/twf)
 
-## Author
+## 作者
 
-Your Name
+[@dghnts](https://github.com/dghnts)
 
-## Acknowledgments
+## 謝辞
 
 - [image](https://github.com/image-rs/image) - Image processing library
 - [clap](https://github.com/clap-rs/clap) - Command line argument parser
