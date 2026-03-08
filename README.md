@@ -16,8 +16,7 @@
 
 ### デモ
 
-<!-- デモGIFをここに追加予定 -->
-<!-- 録画方法: DEMO_RECORDING.md を参照 -->
+![TWF Demo](assets/demo.svg)
 
 **ダークテーマの例:**
 
@@ -313,8 +312,7 @@ MIT OR Apache-2.0
 
 ### Demo
 
-<!-- Demo GIF will be added here -->
-<!-- Recording instructions: See DEMO_RECORDING.md -->
+![TWF Demo](assets/demo.svg)
 
 **Dark theme example:**
 
