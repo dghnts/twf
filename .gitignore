@@ -16,3 +16,12 @@ Thumbs.db
 # バックアップ
 *.bak
 *.backup
+
+# デモ録画関連（ローカル開発用）
+DEMO_RECORDING.md
+scripts/record_demo.sh
+demos/
+*.cast
+screenshot_output.txt
+test_output.txt
+test_result.txt
