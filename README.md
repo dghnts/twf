@@ -291,6 +291,12 @@ MIT OR Apache-2.0
 
 プルリクエストを歓迎します！バグ報告や機能リクエストは、GitHubのIssueでお願いします。
 
+### 謝辞
+
+- [image](https://github.com/image-rs/image) - 画像処理ライブラリ
+- [clap](https://github.com/clap-rs/clap) - コマンドライン引数パーサー
+- [proptest](https://github.com/proptest-rs/proptest) - プロパティベーステストフレームワーク
+
 ---
 
 <a name="english"></a>
@@ -575,17 +581,7 @@ MIT OR Apache-2.0
 
 Pull requests are welcome! For bug reports and feature requests, please use GitHub Issues.
 
----
-
-## リポジトリ
-
-GitHub: [https://github.com/dghnts/twf](https://github.com/dghnts/twf)
-
-## 作者
-
-[@dghnts](https://github.com/dghnts)
-
-## 謝辞
+### Acknowledgments
 
 - [image](https://github.com/image-rs/image) - Image processing library
 - [clap](https://github.com/clap-rs/clap) - Command line argument parser
